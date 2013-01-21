@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP Page</title>
+<script src="js/json2.js"></script>
+<script src="js/jquery.js"></script>
+
+<script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/bookdatabase.js"></script>
+<script type="text/javascript">
+  $(function() { BookDatabase.startup($('#book-database')); });
+</script>
+</head>
+<body>
+	
+	<div class='container'>
+     <h1>Book Database</h1>
+      <div id="book-database">Loading...</div>
+      <h5><a href='#other'>See the other page (routing example)</a></h5>
+    </div>
+
+    <script type="text/x-mustache-template" id="shelf-template">
+      <h2>There are {{ count }} books on your shelf.</h2>
+      <div class='books'></div>
+    </script>
+    
+    <script type="text/x-mustache-template" id="book-template">
+      <h3>{{ title }} ( {{ isbn }} )</h3>
+      <h3>{{ author }}</h3>
+      <p>
+        <button>Delete</button>
+      </p>
+    </script>
+    
+    <script type="text/x-mustache-template" id="form-template">
+      <legend>Add a Book</legend>
+      <fieldset>
+        <div class='control-group'>
+          <label for='title'>Title</label>
+          <div>
+            <input type='text' id='title'>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label for='author'>Author</label>
+          <div >
+            <input type='text' id='author'>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label for='isbn'>ISBN</label>
+          <div >
+            <input type='text' id='isbn'>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" >Add Book</button>
+        </div>
+      </fieldset>
+    </script>
+</body>
+</html>
