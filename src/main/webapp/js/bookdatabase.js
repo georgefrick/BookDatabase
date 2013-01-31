@@ -64,7 +64,7 @@
         	this.template = loadTemplate('book');
         },
         events: {
-          'click button': 'delete'
+          'click button': 'deleteModel'
         },
         render: function() {
           this.$el.html(this.template(this));
@@ -73,7 +73,7 @@
         title: function() { return this.model.get('title'); },
         author: function() { return this.model.get('author'); },
         isbn: function() { return this.model.get('isbn'); },
-        delete: function() {
+        deleteModel: function() {
           this.model.destroy();
         }
       });
